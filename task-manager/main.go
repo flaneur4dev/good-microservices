@@ -50,7 +50,7 @@ func main() {
 	r.Post("/task", hs.HandleAdd(s))
 	r.Delete("/task/{id}", hs.HandleRemove(s))
 
-	err := http.ListenAndServe(stringEnv("TASK_MANAGER_HOST", "localhost:8080"), r)
+	err := http.ListenAndServe(stringEnv("TASK_MANAGER_HOST", ":8080"), r)
 	if err != nil {
 		log.Fatal(err)
 	}
